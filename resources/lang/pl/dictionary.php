@@ -60,7 +60,7 @@ return [
     'logs'          => 'Logi',
     'operations'    => 'Operacje',
     'operation'     => 'Operacja',
-
+    'email'         => 'email',
 
     'report'        => 'Raport',
     'reports'       => 'Raporty',

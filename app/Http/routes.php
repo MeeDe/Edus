@@ -70,6 +70,14 @@ Route::group(['middleware' => 'web'], function () {
                     'as'    => 'administrator.users.delete',
                     'uses'  => 'UserController@delete',
                 ]);
+                Route::get('{id}/edit', [
+                    'as'    => 'administrator.users.edit',
+                    'uses'  => 'UserController@edit',
+                ]);
+                Route::post('{id}/edit', [
+                    'as'    => 'administrator.users.edit',
+                    'uses'  => 'UserController@edit',
+                ]);
                 Route::get('{id}/activate', [
                     'as'    => 'administrator.users.activate',
                     'uses'  => 'UserController@activate',

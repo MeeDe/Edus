@@ -1,6 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
+<br>
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -18,13 +18,8 @@
                         @endif
                     @endif
                 </div>
-                @include('modal')
-                <input type="button" class="btn-primary" name="modalBtn" value="modal">
             </div>
         </div>
     </div>
 </div>
-@endsection
-@section('jquery')
-    @include('jquery')
 @endsection

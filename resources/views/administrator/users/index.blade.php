@@ -20,6 +20,11 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
+                            @include('administrator.users.active_users')
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
                             @include('administrator.users.queued_users')
                         </div>
                     </div>

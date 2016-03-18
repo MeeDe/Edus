@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use Validator;
+
 class User extends Authenticatable
 {
     /**
@@ -24,6 +26,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $rules = [
+        'name'              => 'required',
+        'email'             => 'required',
+        'password'          => 'confirmed',
+        'groups'            => 'required',
+        'personal_number'   => 'required',
+    ];
+
+    public function validate($input)
+    {
+        $v = Validator::make($input, $this->rules);
+        return $v;
+    }
 
     public function groups()
     {
