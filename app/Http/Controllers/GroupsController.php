@@ -10,9 +10,18 @@ use App\Models\Groups;
 use App\Models\Roles;
 use App\Models\Groups_int_Roles;
 use App\User;
+use Auth;
 
 class GroupsController extends Controller
 {
+    public function index()
+    {
+        $data['groups'] = Groups::all();
+        $data['account'] = User::find(Auth::User()->id);
+
+        return view('administrator.groups.index', $data);
+    }
+
     public function show($id)
     {
         $data['group'] = Groups::where('id', $id)->first();
@@ -51,6 +60,7 @@ class GroupsController extends Controller
 
         return redirect()->back();
     }
+
     public function delete($id)
     {
         Groups_int_Roles::where('group_id', $id)->delete();

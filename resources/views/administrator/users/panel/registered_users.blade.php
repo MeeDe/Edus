@@ -1,5 +1,5 @@
 <div class="panel panel-default">
-    <div class="panel-heading">{{ trans('dictionary.users') }}</div>
+    <div class="panel-heading">{{ trans('text.administrator.users.panel.registered_users.header') }}</div>
     <div class="panel-body">
         <div class="row">
             <div class="col-md-7">{{ trans('dictionary.registered_users') }}</div>

@@ -1,6 +1,6 @@
 <script>
     $( document ).ready(function() {
-        $("input[name='modalRoleBtn']").click(function() {
+        $("a[name='modalRoleBtn']").click(function() {
             var link="/administrator/roles/" + $(this).data('id') + "/view";
             $.get( link, function( data ) {
                 var html = $(data).find('.panel-body').html();

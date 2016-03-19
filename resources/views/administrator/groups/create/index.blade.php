@@ -5,9 +5,9 @@
     <div class="container">
         <div class="row">
             <div class="panel panel-default">
-                <div class="panel-heading">{{ trans('administrator\groups\create.headers.index') }}</div>
+                <div class="panel-heading">{{ trans('text.administrator.groups.create.header') }}</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('administrator.groups.create') }}">
+                    <form class="form-horizontal" role="form" method="post" action="{{ route('administrator.groups.create') }}">
                         {!! csrf_field() !!}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -38,7 +38,7 @@
                             </div>
                         </div>
 
-                        @include('administrator.groups.create.roles', ['roles'=>$roles])
+                        @include('administrator.groups.create.panel.roles', ['roles'=>$roles])
 
                         <div class="form-group pull-left">
                             <div class="col-md-4">

@@ -9,23 +9,17 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-4">
-                            @include('administrator.users.registered_users')
-                        </div>
-                        <div class="col-md-4">
-                            @include('administrator.users.statistics')
-                        </div>
-                        <div class="col-md-4">
-                            @include('administrator.users.reports')
+                            @include('administrator.users.panel.registered_users')
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            @include('administrator.users.active_users')
+                            @include('administrator.users.panel.active_users')
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            @include('administrator.users.queued_users')
+                            @include('administrator.users.panel.queued_users')
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 <div class="panel panel-default">
-    <div class="panel-heading">{{ trans('dictionary.roles') }}</div>
+    <div class="panel-heading">{{ trans('text.administrator.groups.create.panel.roles.header') }}</div>
     <div class="panel-body">
         <table class="table table-striped table-bordered">
             <thead>

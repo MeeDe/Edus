@@ -20,7 +20,7 @@ class RolesController extends Controller
     public function show($id)
     {
         $data['role'] = Roles::find($id);
-        return view('administrator.roles.view', $data);
+        return view('administrator.roles.view.index', $data);
     }
 
     public function store(Request $request)

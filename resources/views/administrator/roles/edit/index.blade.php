@@ -1,11 +1,11 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        Edytuj rolę
+        {{ trans('text.administrator.roles.edit.header') }}
     </div>
     <div class="panel-body">
         <form class="form-horizontal" method="post" name="rolesForm">
             <div class="@if ($errors->has('role_name'))has-error has-feedback @endif form-group">
-                <label class="col-sm-3 control-label">Nazwa:</label>
+                <label class="col-sm-3 control-label">{{ trans('dictionary.name') }}</label>
                 <div class="col-sm-9">
                     <input type="text" name="role_name" class="form-control">
                 </div>
@@ -17,7 +17,7 @@
                 <div class="col-sm-3"></div>
                 <div class="col-sm-9">
                     <button type="submit" class="btn btn-primary">
-                        <i class="fa fa-btn fa-sign-in"></i>{{ trans('dictionary.skip') }}
+                        <i class="fa fa-btn glyphicon glyphicon-forward"></i>{{ trans('dictionary.edit') }}
                     </button>
                 </div>
             </div>

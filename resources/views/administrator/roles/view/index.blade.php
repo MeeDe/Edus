@@ -6,7 +6,7 @@
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Role
+                    {{ trans('text.administrator.roles.headers.header') }}
                 </div>
                 <div class="panel-body">
                     <table class="table table-striped table-bordered">

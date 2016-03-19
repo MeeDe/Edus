@@ -5,24 +5,14 @@
     <div class="container">
         <div class="row">
             <div class="panel panel-default">
-                <div class="panel-heading">{{ trans('dictionary.groups') }}</div>
+                <div class="panel-heading">{{ trans('text.administrator.groups.edit.header') }}</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('administrator.groups.edit', ['id'=>$group->id]) }}">
+                    <form class="form-horizontal" role="form" method="post" action="{{ route('administrator.groups.edit', ['id'=>$group->id]) }}">
                         {!! csrf_field() !!}
 
                         <div class="panel-group">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">{{ trans('dictionary.stock') }}</div>
-                                <div class="panel-body">
-                                    @include('administrator.groups.edit.stock', ['group'=>$group])
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">{{ trans('dictionary.users') }}</div>
-                                <div class="panel-body">
-                                    @include('administrator.groups.edit.users', ['users'=>$group->accounts()])
-                                </div>
-                            </div>
+                            @include('administrator.groups.edit.panel.stock')
+                            @include('administrator.groups.edit.panel.users', ['users'=>$group->accounts()])
                             <div class="panel">
                                 <button type="submit" name="edit" class="btn btn-primary">
                                     <i class="fa fa-btn glyphicon glyphicon-edit"></i>{{ trans('dictionary.edit') }}

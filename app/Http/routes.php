@@ -30,10 +30,12 @@ Route::group(['middleware' => 'web'], function () {
         return view('welcome');
     });
 
-    Route::get('/home', 'HomeController@index');
+    //Route::get('/home', 'HomeController@index');
+
     Route::get('/queue', function() {
         return view('auth.request_in_queue');
     });
+
     Route::group(['middleware' => 'auth'], function () {
         Route::group(['prefix' => 'student'], function() {
 
@@ -42,26 +44,21 @@ Route::group(['middleware' => 'web'], function () {
 
         });
         Route::group(['prefix' => 'administrator'], function() {
+
             Route::get('/', [
                 'as'    => 'administrator.index',
                 'uses'  => 'AdministratorController@index',
             ]);
-            Route::get('users', [
-                'as'    => 'administrator.users',
-                'uses'  => 'AdministratorController@users',
-            ]);
 
             Route::group(['prefix' => 'users'], function() {
                 Route::get('/', [
-                    'as'    => 'administrator.users',
-                    'uses'  => 'AdministratorController@users',
+                    'as'    => 'administrator.users.index',
+                    'uses'  => 'UserController@index',
                 ]);
-
                 Route::get('create', [
                     'as'    => 'administrator.users.create',
                     'uses'  => 'UserController@create',
                 ]);
-
                 Route::post('create', [
                     'as'    => 'administrator.users.create',
                     'uses'  => 'UserController@create',
@@ -86,26 +83,17 @@ Route::group(['middleware' => 'web'], function () {
 
             Route::group(['prefix' => 'groups'], function() {
                 Route::get('/', [
-                    'as'    => 'administrator.groups',
-                    'uses'  => 'AdministratorController@groups',
+                    'as'    => 'administrator.groups.index',
+                    'uses'  => 'GroupsController@index',
                 ]);
-
                 Route::get('create', [
                     'as'    => 'administrator.groups.create',
                     'uses'  => 'GroupsController@create',
                 ]);
-
                 Route::post('create', [
                     'as'    => 'administrator.groups.create',
                     'uses'  => 'GroupsController@create',
                 ]);
-
-                /*
-                Route::get('view', [
-                    'as'    => 'administrator.groups',
-                    'uses'  => 'GroupsController@groups',
-                ]);
-                */
                 Route::get('{id}/show', [
                     'as'    => 'administrator.groups.show',
                     'uses'  => 'GroupsController@show',
@@ -122,7 +110,7 @@ Route::group(['middleware' => 'web'], function () {
 
             Route::group(['prefix' => 'roles'], function() {
                 Route::get('/', [
-                    'as'    => 'administrator.roles',
+                    'as'    => 'administrator.roles.index',
                     'uses'  => 'RolesController@index',
                 ]);
                 Route::get('{id}/view', [
@@ -137,7 +125,7 @@ Route::group(['middleware' => 'web'], function () {
 
             Route::group(['prefix' => 'logs'], function() {
                 Route::get('/', [
-                    'as'    => 'administrator.logs',
+                    'as'    => 'administrator.logs.index',
                     'uses'  => 'LogsController@index',
                 ]);
             });
@@ -147,11 +135,7 @@ Route::group(['middleware' => 'web'], function () {
                 'uses'  => 'AdministratorController@settings',
             ]);
 
-            Route::get('tmp', 'AdministratorController@tmp');
-        });
-
-        Route::group(['prefix' => 'tech'], function() {
-            // Last in line
+            Route::get('test', 'AdministratorController@test');
         });
     });
 });

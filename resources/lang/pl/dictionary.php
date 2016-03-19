@@ -7,6 +7,9 @@ return [
     'manage'    => 'Zarządzanie',
     'stock'     => 'XXX',
 
+    'password'  => 'Hasło',
+    'password_confirmation' => 'Powtórz hasło',
+
     'ok'        => 'Ok',
     'cancel'    => 'Anuluj',
 
@@ -26,10 +29,14 @@ return [
     'back'      => 'Wstecz',
     'search'    => 'Wyszukaj',
 
+    'create'    => 'Utwórz',
+    'read'      => 'Odczytaj',
+    'update'    => 'Aktualizuj',
+    'delete'    => 'Usuń',
+
     'edit'      => 'Edytuj',
     'save'      => 'Zapisz',
-    'delete'    => 'Usuń',
-    'create'    => 'Utwórz',
+
     'block'     => 'Zablokuj',
     'submit'    => 'Wyślij',
     'skip'      => 'Przejdź',

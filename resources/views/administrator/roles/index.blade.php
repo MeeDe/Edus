@@ -6,25 +6,25 @@
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Role
+                    {{ trans('text.administrator.roles.headers.header') }}
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="panel-group">
-                                @include('administrator.roles.create')
+                                @include('administrator.roles.create.index')
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="panel-group">
-                                @include('administrator.roles.edit')
+                                @include('administrator.roles.edit.index')
                             </div>
                         </div>
                     </div>
                     <div class="panel-group">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                Przegląd roli
+                                {{ trans('text.administrator.roles.headers.role_review') }}
                             </div>
                         </div>
                         <div class="panel-body">
@@ -43,13 +43,16 @@
                                             <td style="text-align: center">{{ ++$key }}</td>
                                             <td>{{ $role->name }}</td>
                                             <td>{{ $role->descr }}</td>
-                                            <td style="text-align: center;"><input type="button" data-id="{{ $role->id }}" name="modalRoleBtn" class="btn-primary" value="X"></td>
+                                            <!--<td style="text-align: center;"><input type="button" data-id="{{ $role->id }}" name="modalRoleBtn" class="btn-primary" value="X"></td>-->
+                                            <td style="text-align: center;">
+                                                <a name="modalRoleBtn" data-id="{{ $role->id }}"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                            </td>
                                             <!-- <td style="text-align: center"><a href="{{ route('administrator.roles.view', ['id' => $role->id]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td> -->
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
-                            @include('modal')
+                            @include('administrator.roles.view.modal')
                         </div>
                     </div>
                 </div>

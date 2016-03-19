@@ -1,5 +1,5 @@
 <div class="panel panel-default">
-    <div class="panel-heading">{{  trans('dictionary.manage') }}</div>
+    <div class="panel-heading">{{  trans('text.administrator.groups.panel.manage.header') }}</div>
     <div class="panel-body">
         <table class="table table-striped table-bordered">
             <thead>
@@ -14,9 +14,9 @@
             <tbody>
                 @foreach($groups as $k => $group)
                     <tr>
-                        <td style="text-align: center; width:6%">{{++$k}}</td>
-                        <td style="width: 30%">{{$group->name}}</td>
-                        <td style="width: 50%">{{$group->desc}}</td>
+                        <td style="text-align: center; width:6%">{{ ++$k }}</td>
+                        <td style="width: 30%">{{ $group->name }}</td>
+                        <td style="width: 50%">{{ $group->desc }}</td>
                         <td style="text-align: center; width: 7%"><a href="{{ route('administrator.groups.show', ['id'=>$group->id]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
                         <td style="text-align: center; width: 7%"><a href="{{ route('administrator.groups.delete', ['id'=>$group->id]) }}"><span class="glyphicon glyphicon-remove"></span></a></td>
                     </tr>

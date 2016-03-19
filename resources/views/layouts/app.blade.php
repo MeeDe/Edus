@@ -66,7 +66,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ route('administrator.index') }}"><i class="fa fa-btn fa-sign-out"></i>{{ trans('system.menu.admin_panel') }}</a></li>
+                                <li><a href="{{ route('administrator.index') }}"><i class="glyphicon glyphicon-fire"></i> {{ trans('system.menu.admin_panel') }}</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>{{ trans('system.menu.logout') }}</a></li>
                             </ul>
                         </li>

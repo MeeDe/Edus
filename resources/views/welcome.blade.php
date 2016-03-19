@@ -13,8 +13,6 @@
                         <br>
                         @if(!Auth::User()->active)
                             {{ trans('text.welcome.inactive') }}
-                        @else
-                            {{ trans('text.welcome.active') }}
                         @endif
                     @endif
                 </div>

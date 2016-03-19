@@ -1,18 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-    <br>
+    @include('layouts.administrator.submenu')
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('auth.index')}}</div>
+                    <div class="panel-heading">{{trans('text.administrator.users.edit.header')}}</div>
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('administrator.users.edit', ['id'=>$account->id]) }}">
                             {!! csrf_field() !!}
 
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">{{ trans('auth.label.name') }}</label>
+                                <label class="col-md-4 control-label">{{ trans('dictionary.name') }}</label>
 
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" name="name" value="{{ $account->name }}">
@@ -26,7 +26,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">{{ trans('auth.label.email') }}</label>
+                                <label class="col-md-4 control-label">{{ trans('dictionary.email') }}</label>
 
                                 <div class="col-md-6">
                                     <input type="email" class="form-control" name="email" value="{{ $account->email }}">
@@ -40,7 +40,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">{{ trans('auth.label.password') }}</label>
+                                <label class="col-md-4 control-label">{{ trans('dictionary.password') }}</label>
 
                                 <div class="col-md-6">
                                     <input type="password" class="form-control" name="password">
@@ -54,7 +54,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">{{ trans('auth.label.password_confirmation') }}</label>
+                                <label class="col-md-4 control-label">{{ trans('dictionary.password_confirmation') }}</label>
 
                                 <div class="col-md-6">
                                     <input type="password" class="form-control" name="password_confirmation">
@@ -68,7 +68,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">{{ trans('auth.label.group') }}</label>
+                                <label class="col-md-4 control-label">{{ trans('dictionary.group') }}</label>
 
                                 <div class="col-md-6">
                                     <select class="form-control" name="groups">
@@ -80,7 +80,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('personal_number') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">{{ trans('auth.label.personal_number') }}</label>
+                                <label class="col-md-4 control-label">{{ trans('dictionary.personal_number') }}</label>
 
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" name="personal_number" value="{{ $account->personal_number }}">
@@ -96,7 +96,7 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
-                                        <i class="fa fa-btn fa-user"></i>{{ trans('auth.button.register') }}
+                                        <i class="fa fa-btn fa-user"></i>{{ trans('dictionary.edit') }}
                                     </button>
                                 </div>
                             </div>;
