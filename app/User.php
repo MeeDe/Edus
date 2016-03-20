@@ -31,7 +31,7 @@ class User extends Authenticatable
         'name'              => 'required',
         'email'             => 'required',
         'password'          => 'confirmed',
-        'groups'            => 'required',
+        'group_id'            => 'required',
         'personal_number'   => 'required',
     ];
 

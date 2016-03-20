@@ -90,9 +90,9 @@ Route::group(['middleware' => 'web'], function () {
                     'as'    => 'administrator.groups.create',
                     'uses'  => 'GroupsController@create',
                 ]);
-                Route::post('create', [
-                    'as'    => 'administrator.groups.create',
-                    'uses'  => 'GroupsController@create',
+                Route::post('store', [
+                    'as'    => 'administrator.groups.store',
+                    'uses'  => 'GroupsController@store',
                 ]);
                 Route::get('{id}/show', [
                     'as'    => 'administrator.groups.show',
@@ -120,6 +120,29 @@ Route::group(['middleware' => 'web'], function () {
                 Route::post('store', [
                     'as'    => 'administrator.roles.store',
                     'uses'  => 'RolesController@store',
+                ]);
+                Route::get('{id}/delete', [
+                    'as'    => 'administrator.roles.delete',
+                    'uses'  => 'RolesController@delete',
+                ]);
+            });
+
+            Route::group(['prefix' => 'privileges'], function() {
+                Route::get('/', [
+                    'as'    => 'administrator.privileges.index',
+                    'uses'  => 'PrivilegesController@index',
+                ]);
+                Route::get('{id}/view', [
+                    'as'    => 'administrator.privileges.view',
+                    'uses'  => 'PrivilegesController@show',
+                ]);
+                Route::post('store', [
+                    'as'    => 'administrator.privileges.store',
+                    'uses'  => 'PrivilegesController@store',
+                ]);
+                Route::get('{id}/delete', [
+                    'as'    => 'administrator.privileges.delete',
+                    'uses'  => 'PrivilegesController@delete',
                 ]);
             });
 

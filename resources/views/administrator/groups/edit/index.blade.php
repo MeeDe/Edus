@@ -12,6 +12,7 @@
 
                         <div class="panel-group">
                             @include('administrator.groups.edit.panel.stock')
+                            @include('administrator.groups.edit.panel.roles', ['roles'=>$roles])
                             @include('administrator.groups.edit.panel.users', ['users'=>$group->accounts()])
                             <div class="panel">
                                 <button type="submit" name="edit" class="btn btn-primary">

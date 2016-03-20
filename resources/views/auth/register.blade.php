@@ -66,12 +66,12 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('group') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">{{ trans('auth.label.group') }}</label>
 
                             <div class="col-md-6">
                                 <select class="form-control" name="group">
-                                    <option value="0" disabled selected>{{trans('auth.requires_acceptation')}}</option>
+                                    <option value="0" disabled selected>{{trans('auth.group')}}</option>
                                     @foreach($groups as $group)
                                         <option value="{{ $group->id }}">{{ $group->name }}</option>
                                     @endforeach

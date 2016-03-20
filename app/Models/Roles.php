@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\AuditingTrait;
 
+use App\Models\Roles_int_Privileges as RIP;
+use App\Models\Groups_int_Roles as GIR;
+
 class Roles extends Model
 {
     use AuditingTrait;
@@ -48,5 +51,14 @@ class Roles extends Model
 
         }
         return $accs->flatten();
+    }
+
+    protected static function boot() {
+        parent::boot();
+
+        static::deleting(function($role) {
+            RIP::where('role_id', $role->id)->delete();
+            GIR::where('role_id', $role->id)->delete();
+        });
     }
 }

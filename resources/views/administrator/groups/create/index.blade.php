@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">{{ trans('text.administrator.groups.create.header') }}</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="post" action="{{ route('administrator.groups.create') }}">
+                    <form class="form-horizontal" role="form" method="post" action="{{ route('administrator.groups.store') }}">
                         {!! csrf_field() !!}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">

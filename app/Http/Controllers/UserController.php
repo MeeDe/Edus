@@ -52,7 +52,13 @@ class UserController extends Controller
     {
         $data['account'] = User::find($id);
         if($request->method()=="GET") {
-            $data['groups'] = Groups::all();
+            $data['groups'] = $data['account']->groups()->get();
+            $data['roles']=new Collection();
+            foreach ($data['groups'] as $group) {
+                $data['roles']->push($group->roles()->get());
+            }
+
+            $data['roles']=$data['roles']->flatten();
 
             return view('administrator.users.edit.index', $data);
         }

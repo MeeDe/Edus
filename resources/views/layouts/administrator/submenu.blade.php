@@ -10,6 +10,9 @@
             <li @if(Request::segment(2)=="roles") class="active" @endif>
                 <a href="{{ route('administrator.roles.index') }}">{{ trans('dictionary.roles') }}</a>
             </li>
+            <li @if(Request::segment(2)=="privileges") class="active" @endif>
+                <a href="{{ route('administrator.privileges.index') }}">{{ trans('dictionary.privileges') }}</a>
+            </li>
             <!--<li><a href="{{ route('administrator.logs.index') }}">{{ trans('dictionary.logs') }}</a></li>-->
         </ul>
     </nav>

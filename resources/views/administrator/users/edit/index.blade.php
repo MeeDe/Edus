@@ -19,8 +19,8 @@
 
                                     @if ($errors->has('name'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                        </span>
                                     @endif
                                 </div>
                             </div>
@@ -33,8 +33,8 @@
 
                                     @if ($errors->has('email'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
                                     @endif
                                 </div>
                             </div>
@@ -47,8 +47,8 @@
 
                                     @if ($errors->has('password'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
                                     @endif
                                 </div>
                             </div>
@@ -61,17 +61,17 @@
 
                                     @if ($errors->has('password_confirmation'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </span>
+                                            <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                        </span>
                                     @endif
                                 </div>
                             </div>
 
-                            <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                            <div class="form-group{{ $errors->has('group_id') ? ' has-error' : '' }}">
                                 <label class="col-md-4 control-label">{{ trans('dictionary.group') }}</label>
 
                                 <div class="col-md-6">
-                                    <select class="form-control" name="groups">
+                                    <select class="form-control" name="group_id">
                                         @foreach($groups as $group)
                                             <option value="{{ $group->id }}" @if($group->id==$account->group_id) selected @endif>{{ $group->name }}</option>
                                         @endforeach
@@ -87,9 +87,15 @@
 
                                     @if ($errors->has('personal_number'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('personal_number') }}</strong>
-                                    </span>
+                                            <strong>{{ $errors->first('personal_number') }}</strong>
+                                        </span>
                                     @endif
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @include('administrator.users.edit.acl', ['roles'=>$roles])
                                 </div>
                             </div>
 
@@ -99,7 +105,7 @@
                                         <i class="fa fa-btn fa-user"></i>{{ trans('dictionary.edit') }}
                                     </button>
                                 </div>
-                            </div>;
+                            </div>
                         </form>
                     </div>
                 </div>

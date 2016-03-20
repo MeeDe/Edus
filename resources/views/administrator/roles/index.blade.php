@@ -35,6 +35,7 @@
                                         <th>{{ trans('dictionary.name') }}</th>
                                         <th>{{ trans('dictionary.desc') }}</th>
                                         <th>{{ trans('dictionary.details') }}</th>
+                                        <th>{{ trans('dictionary.delete') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -43,11 +44,10 @@
                                             <td style="text-align: center">{{ ++$key }}</td>
                                             <td>{{ $role->name }}</td>
                                             <td>{{ $role->descr }}</td>
-                                            <!--<td style="text-align: center;"><input type="button" data-id="{{ $role->id }}" name="modalRoleBtn" class="btn-primary" value="X"></td>-->
                                             <td style="text-align: center;">
                                                 <a name="modalRoleBtn" data-id="{{ $role->id }}"><span class="glyphicon glyphicon-eye-open"></span></a>
                                             </td>
-                                            <!-- <td style="text-align: center"><a href="{{ route('administrator.roles.view', ['id' => $role->id]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td> -->
+                                            <td style="text-align: center; width: 7%"><a href="{{ route('administrator.roles.delete', ['id'=>$role->id]) }}"><span class="glyphicon glyphicon-remove"></span></a></td>
                                         </tr>
                                     @endforeach
                                 </tbody>
