@@ -41,6 +41,11 @@ class User extends Authenticatable
         return $v;
     }
 
+    public function masks()
+    {
+        return $this->hasMany('App\Models\Mask');
+    }
+
     public function groups()
     {
         return $this->hasMany('App\Models\Groups', 'id', 'group_id');
@@ -57,7 +62,7 @@ class User extends Authenticatable
 
         foreach($group_roles as $roles) {
             foreach ($roles as $role) {     // can be x-th group n-th role. Roles can cover
-                $privs_collection->add($role->privleges()->get());
+                $privs_collection->add($role->privileges()->get());
             }
         }
 

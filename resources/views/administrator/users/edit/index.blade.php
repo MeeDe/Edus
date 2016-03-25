@@ -95,7 +95,7 @@
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    @include('administrator.users.edit.acl', ['roles'=>$roles])
+                                    @include('administrator.users.edit.acl', [ 'privileges'=>$privileges ])
                                 </div>
                             </div>
 

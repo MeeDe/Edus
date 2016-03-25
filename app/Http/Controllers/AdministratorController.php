@@ -22,6 +22,7 @@ class AdministratorController extends Controller
 
     public function test()
     {
-
+        $acc = User::find(Auth::User()->id);
+        dd($acc->masks()->get());
     }
 }

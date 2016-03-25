@@ -107,4 +107,6 @@ return [
 
     'attributes' => [],
 
+    'input_error'   => 'Niepoprawne dane',
+
 ];

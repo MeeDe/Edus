@@ -4,22 +4,20 @@
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>Rola</th>
                     <th>Uprawnienie</th>
                     <th style="text-align: center">Dostęp</th>
                 </tr>
             </thead>
             <tbody>
             <?php $p_key = 0; ?>
-            @foreach($roles as $k=>$role)
-                @foreach($role->privileges()->get() as $p=>$privilege)
+                @foreach($privileges as $k=>$privilege)
                     <tr>
-                        <td>{{ $role->name }}</td>
-                        <td>{{ $privilege->route }}</td>
-                        <td style="text-align: center"><input type="checkbox" name="privilege[{{ $p_key++ }}]" @if($privilege->operations=='Y') checked @endif></td>
+                        <td>{{ $privilege['route'] }}</td>
+                        <td style="text-align: center">
+                            <input type="checkbox" name="privilege[{{ $p_key++ }}]" value="{{ $privilege['route'] }}" @if($privilege['privilege']=='Y') checked @endif>
+                        </td>
                     </tr>
                 @endforeach
-            @endforeach
             </tbody>
         </table>
     </div>
