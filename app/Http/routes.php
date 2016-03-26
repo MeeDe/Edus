@@ -146,6 +146,36 @@ Route::group(['middleware' => 'web'], function () {
                 ]);
             });
 
+            Route::group(['prefix' => 'system'], function() {
+                Route::get('/', [
+                    'as'    => 'administrator.system.index',
+                    'uses'  => 'SystemController@index',
+                ]);
+                Route::group(['prefix' => 'data'], function() {
+                    Route::group(['prefix' => 'export'], function() {
+                        Route::get('csv', [
+                            'as'    => 'administrator.system.data.export.csv',
+                            'uses'  => 'SystemController@csv',
+                        ]);
+                        Route::get('pdf', [
+                            'as'    => 'administrator.system.data.export.pdf',
+                            'uses'  => 'SystemController@pdf',
+                        ]);
+                        Route::get('sql', [
+                            'as'    => 'administrator.system.data.export.sql',
+                            'uses'  => 'SystemController@sql',
+                        ]);
+                        Route::get('xml', [
+                            'as'    => 'administrator.system.data.export.xml',
+                            'uses'  => 'SystemController@xml',
+                        ]);
+                        Route::get('json', [
+                            'as'    => 'administrator.system.data.export.json',
+                            'uses'  => 'SystemController@json',
+                        ]);
+                    });
+                });
+            });
             Route::group(['prefix' => 'logs'], function() {
                 Route::get('/', [
                     'as'    => 'administrator.logs.index',

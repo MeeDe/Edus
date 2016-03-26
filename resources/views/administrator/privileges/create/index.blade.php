@@ -28,17 +28,11 @@
             <div class="@if ($errors->has('priv_operations'))has-error has-feedback @endif form-group">
                 <label class="col-sm-3 control-label">{{ trans('dictionary.privileges') }}</label>
                 <div class="col-sm-9">
-                    <div class="col-md-3" style="text-align: center;">
-                        <label class="checkbox-inline"><input type="checkbox" name="rights[0]" value="C">{{ trans('dictionary.create') }}</label>
+                    <div class="col-md-6" style="text-align: center;">
+                        <label class="checkbox-inline"><input type="checkbox" name="rights[0]" value="Y">{{ trans('dictionary.yes') }}</label>
                     </div>
-                    <div class="col-md-3" style="text-align: center;">
-                        <label class="checkbox-inline"><input type="checkbox" name="rights[1]" value="R">{{ trans('dictionary.read') }}</label>
-                    </div>
-                    <div class="col-md-3" style="text-align: center;">
-                        <label class="checkbox-inline"><input type="checkbox" name="rights[2]" value="U">{{ trans('dictionary.update') }}</label>
-                    </div>
-                    <div class="col-md-3" style="text-align: center;">
-                        <label class="checkbox-inline"><input type="checkbox" name="rights[3]" value="D">{{ trans('dictionary.delete') }}</label>
+                    <div class="col-md-6" style="text-align: center;">
+                        <label class="checkbox-inline"><input type="checkbox" name="rights[1]" value="N">{{ trans('dictionary.no') }}</label>
                     </div>
                 </div>
             </div>

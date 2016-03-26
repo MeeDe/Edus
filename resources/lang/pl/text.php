@@ -28,6 +28,12 @@ return [
                 'header' => 'Edycja użytkownika',
             ],
         ],
+        'privileges' => [
+            'header'    => 'Uprawnienia',
+            'create'    => [
+                'header'    => 'Utwórz uprawnienia',
+            ],
+        ],
         'subjects' => [
             'index'     => '',
             'header'    => 'Przedmioty',
@@ -88,6 +94,21 @@ return [
         'system' => [
             'index'     => '',
             'header'    => 'System',
+            'panel'=> [
+                'website' => [
+                    'header' => 'Ustawienia strony',
+                ],
+                'data' => [
+                    'header' => 'Zarządzanie danymi',
+                    'export' => [
+                        'csv'   => 'Eksportuj do CSV',
+                        'pdf'   => 'Eksportuj do PDF',
+                        'sql'   => 'Eksportuj do SQL',
+                        'xml'   => 'Eksportuj do XML',
+                        'json'  => 'Eksportuj do JSON',
+                    ],
+                ],
+            ],
         ],
     ],
 ];
