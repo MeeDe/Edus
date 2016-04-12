@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    {!! \App\Classes\Helpers\Meta::get(Route::getCurrentRoute()->getName())  !!}
     <title>{{ trans('system.name') }}</title>
 
     <!-- Fonts -->
@@ -27,6 +27,7 @@
             margin-bottom: 0;
         }
     </style>
+    @yield('css')
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default">

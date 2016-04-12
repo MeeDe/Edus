@@ -3,6 +3,14 @@
 return [
     'account'   => 'Konto',
 
+    'seo'           => 'SEO',
+    'offline'       => 'Offline',
+    'online'        => 'Online',
+    'offline_msg'   => 'Wiadomość offline',
+
+    'general'       => 'Ogólne',
+    'advanced'      => 'Zaawansowane',
+
     'welcome'   => 'Witamy',
     'manage'    => 'Zarządzanie',
     'stock'     => 'XXX',
@@ -40,6 +48,9 @@ return [
     'block'     => 'Zablokuj',
     'submit'    => 'Wyślij',
     'skip'      => 'Przejdź',
+
+    'table'     => 'Tabela',
+    'tables'    => 'Tabele',
 
     'updated'   => 'Zaaktualizowany',
     'created'   => 'Utworzony',

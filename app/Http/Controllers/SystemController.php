@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Classes\Helpers\DBO;
+
 class SystemController extends Controller
 {
     public function index()
     {
-        return view('administrator.system.index');
+        $data['tables'] = DBO::tables();
+        return view('administrator.system.index', $data);
     }
 
     public function csv()

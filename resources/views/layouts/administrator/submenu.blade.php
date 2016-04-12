@@ -16,6 +16,9 @@
             <li @if(Request::segment(2)=="system") class="active" @endif>
                 <a href="{{ route('administrator.system.index') }}">{{ trans('dictionary.system') }}</a>
             </li>
+            <li @if(Request::segment(2)=="seo") class="active" @endif>
+                <a href="{{ route('administrator.seo.index') }}">{{ trans('dictionary.seo') }}</a>
+            </li>
             <!--<li><a href="{{ route('administrator.logs.index') }}">{{ trans('dictionary.logs') }}</a></li>-->
         </ul>
     </nav>

@@ -183,6 +183,17 @@ Route::group(['middleware' => 'web'], function () {
                 ]);
             });
 
+            Route::group(['prefix' => 'seo'], function() {
+                Route::get('/', [
+                    'as'    => 'administrator.seo.index',
+                    'uses'  => 'SeoController@index',
+                ]);
+                Route::get('store', [
+                    'as'    => 'administrator.seo.store',
+                    'uses'  => 'SeoController@store',
+                ]);
+            });
+
             Route::get('settings', [
                 'as'    => 'administrator.settings',
                 'uses'  => 'AdministratorController@settings',

@@ -96,16 +96,18 @@ return [
             'header'    => 'System',
             'panel'=> [
                 'website' => [
-                    'header' => 'Ustawienia strony',
+                    'header'        => 'Ustawienia strony',
+                    'offline_msg'   => 'Strona została tymczasowo wyłączona',
                 ],
                 'data' => [
                     'header' => 'Zarządzanie danymi',
                     'export' => [
-                        'csv'   => 'Eksportuj do CSV',
-                        'pdf'   => 'Eksportuj do PDF',
-                        'sql'   => 'Eksportuj do SQL',
-                        'xml'   => 'Eksportuj do XML',
-                        'json'  => 'Eksportuj do JSON',
+                        'header' => 'Eksportuj do',
+                        'csv'   => 'CSV',
+                        'pdf'   => 'PDF',
+                        'sql'   => 'SQL',
+                        'xml'   => 'XML',
+                        'json'  => 'JSON',
                     ],
                 ],
             ],

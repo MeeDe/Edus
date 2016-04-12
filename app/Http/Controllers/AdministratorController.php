@@ -8,6 +8,8 @@ use App\User;
 
 use Auth;
 
+use DB;
+
 class AdministratorController extends Controller
 {
     public function index()
@@ -22,7 +24,12 @@ class AdministratorController extends Controller
 
     public function test()
     {
-        $acc = User::find(Auth::User()->id);
-        dd($acc->masks()->get());
+        DB::connection()->enableQueryLog();
+        foreach (User::with('masks')->get() as $m)
+        {
+            dump($m->masks);
+        }
+        $queries = DB::getQueryLog();
+        dd($queries);
     }
 }

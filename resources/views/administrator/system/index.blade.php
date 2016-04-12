@@ -12,11 +12,14 @@
                             @include('administrator.system.panel.website')
                         </div>
                         <div class="col-md-6">
-                            @include('administrator.system.panel.data')
+                            <!-- @include('administrator.system.panel.data', ['tables'=>$tables]) -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+@endsection
+@section('jquery')
+    @include('administrator.system.panel.jquery')
 @endsection
