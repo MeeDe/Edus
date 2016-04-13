@@ -7,6 +7,7 @@ return [
     'offline'       => 'Offline',
     'online'        => 'Online',
     'offline_msg'   => 'Wiadomość offline',
+    'active'        => 'Aktywny',
 
     'general'       => 'Ogólne',
     'advanced'      => 'Zaawansowane',
@@ -78,13 +79,15 @@ return [
     'logs'          => 'Logi',
     'operations'    => 'Operacje',
     'operation'     => 'Operacja',
-    'email'         => 'email',
+    'email'         => 'Email',
 
     'report'        => 'Raport',
     'reports'       => 'Raporty',
 
     'registered_users'  => 'Zarejestrowani użytkownicy',
     'inactive_users'    => 'Nieaktywni użytkownicy',
+    'users_in_groups'   => 'Użytkownicy w grupach',
+
     'personal_number'   => 'Pesel',
 
     'number'        => 'Lp.',   // Liczba porządkowa, używane w tabelkach
@@ -95,6 +98,7 @@ return [
     'privileges'    => 'Uprawnienia',
     'details'       => 'Detale',
 
+    'access'    => 'Dostęp',
     'making_request' => 'składający podanie',
 
     '401'   => 'Brak uprawnień',

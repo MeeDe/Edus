@@ -1,11 +1,11 @@
 <div class="panel panel-default">
-    <div class="panel-heading">{{  trans('text.administrator.users.panel.inactive_users.header') }}</div>
+    <div class="panel-heading">{{  trans('text.administrator.users.edit.panel.acl.header') }}</div>
     <div class="panel-body">
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>Uprawnienie</th>
-                    <th style="text-align: center">Dostęp</th>
+                    <th>{{ trans('dictionary.privileges') }}</th>
+                    <th style="text-align: center">{{ trans('dictionary.access') }}</th>
                 </tr>
             </thead>
             <tbody>

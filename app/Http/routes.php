@@ -79,6 +79,10 @@ Route::group(['middleware' => 'web'], function () {
                     'as'    => 'administrator.users.activate',
                     'uses'  => 'UserController@activate',
                 ]);
+                Route::get('{id}/deactivate', [
+                    'as'    => 'administrator.users.deactivate',
+                    'uses'  => 'UserController@deactivate',
+                ]);
             });
 
             Route::group(['prefix' => 'groups'], function() {

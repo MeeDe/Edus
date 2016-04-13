@@ -9,6 +9,7 @@
                     <th>{{ trans('dictionary.name') }}</th>
                     <th>{{ trans('dictionary.email') }}</th>
                     <th>{{ trans('dictionary.personal_number') }}</th>
+                    <th>{{ trans('dictionary.active') }}</th>
                     <th>{{ trans('dictionary.edit') }}</th>
                     <th>{{ trans('dictionary.delete') }}</th>
                 </tr>
@@ -20,7 +21,8 @@
                         <td style="text-align: center; width: 5%"><input type="checkbox" name="user[{{ $k }}]" value="{{ $user->id }}"></td>
                         <td style="width: 40%">{{ $user->name }}</td>
                         <td style="width: 20%">{{ $user->email }}</td>
-                        <td style="width: 20%">{{ $user->personal_number }}</td>
+                        <td style="width: 15%">{{ $user->personal_number }}</td>
+                        <td style="text-align: center; width: 5%"><a href="{{ route('administrator.users.deactivate', ['id'=>$user->id]) }}"><span class="glyphicon glyphicon-ok-sign"></span></a></td>
                         <td style="text-align: center; width: 5%"><a href="{{ route('administrator.users.edit', ['id'=>$user->id]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
                         <td style="text-align: center; width: 5%"><a href="{{ route('administrator.users.delete', ['id'=>$user->id]) }}"><span class="glyphicon glyphicon-remove"></span></a></td>
                     </tr>

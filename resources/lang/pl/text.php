@@ -26,6 +26,11 @@ return [
             ],
             'edit' => [
                 'header' => 'Edycja użytkownika',
+                'panel' => [
+                    'acl' => [
+                        'header' => 'ACL',
+                    ],
+                ],
             ],
         ],
         'privileges' => [

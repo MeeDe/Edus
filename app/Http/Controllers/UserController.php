@@ -17,28 +17,21 @@ class UserController extends Controller
 {
     public function index()
     {
-        $roles = Roles::all();
-        $roles = new Collection(['teachers' => $roles->where('name', 'teachers'),
-            'students' => $roles->where('name', 'students'),
-            'admins'   => $roles->where('name', 'Technical Administrator')]);
+        $roles = new Roles;
+        $roles_col = new Collection();
 
-        $counter = [];
-        foreach($roles as $k=>$role) {
-            $counter[$k]= 0;
+        $role_names = $roles->get()->pluck('name');
+
+        $users_data = [];
+        foreach($role_names as $role_name) {
+            $accounts = Roles::where('name', $role_name)->first()->accounts()->count();
+            array_push($users_data, [$role_name => $accounts]);
         }
 
-        foreach($roles as $k=>$role) {
-            foreach($role as $subrole) {
-                if($subrole !== null) {
-                    $counter[$k]+=$subrole->accounts()->unique('name')->count();
-                }
-            }
-        }
-
-        $data['user_amount']=$counter;
+        $data['registered_users'] = User::where('active', true)->count();
         $data['inactive_amount'] = User::where('active', false)->count();
         $data['users'] = new User;
-
+        $data['users_data'] = $users_data;
         return view('administrator.users.index', $data);
     }
 
@@ -46,6 +39,14 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->active=true;
+        $user->update();
+        return redirect()->back();
+    }
+
+    public function deactivate($id)
+    {
+        $user = User::find($id);
+        $user->active=false;
         $user->update();
         return redirect()->back();
     }
