@@ -60,6 +60,9 @@ return [
                     'users' => [
                         'header' => 'Użytkownicy grupy',
                     ],
+                    'roles' => [
+                        'header' => 'Role',
+                    ],
                 ],
             ],
             'create' => [
@@ -76,6 +79,7 @@ return [
             'headers' => [
                 'header'    => 'Role',
                 'role_review'   => 'Przegląd roli',
+                'modal'     => 'Rola',
             ],
             'create' => [
                 'header' => 'Utwórz rolę',

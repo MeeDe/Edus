@@ -13,11 +13,9 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="pull-right">
-                    <label class="col-md-4 control-label">{{trans('dictionary.created')}}</label>
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" name="created" value="{{ $group->created_at }}" readonly>
-                    </div>
+                <label class="col-md-4 control-label">{{trans('dictionary.created')}}</label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" name="created" value="{{ $group->created_at }}" readonly>
                 </div>
             </div>
         </div>
@@ -34,11 +32,9 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="pull-right">
-                    <label class="col-md-4 control-label">{{trans('dictionary.updated')}}</label>
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" name="created" value="{{ $group->updated_at }}" readonly>
-                    </div>
+                <label class="col-md-4 control-label">{{trans('dictionary.updated')}}</label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" name="updated" value="{{ $group->updated_at }}" readonly>
                 </div>
             </div>
         </div>

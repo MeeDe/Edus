@@ -41,13 +41,13 @@
                                 <tbody>
                                     @foreach($roles->get() as $key => $role)
                                         <tr>
-                                            <td style="text-align: center">{{ ++$key }}</td>
-                                            <td>{{ $role->name }}</td>
-                                            <td>{{ $role->descr }}</td>
-                                            <td style="text-align: center;">
+                                            <td style="text-align: center; width: 5%">{{ ++$key }}</td>
+                                            <td style="width: 25%">{{ $role->name }}</td>
+                                            <td style="width: 50%">{{ $role->descr }}</td>
+                                            <td style="text-align: center; width: 10%">
                                                 <a name="modalRoleBtn" data-id="{{ $role->id }}"><span class="glyphicon glyphicon-eye-open"></span></a>
                                             </td>
-                                            <td style="text-align: center; width: 7%"><a href="{{ route('administrator.roles.delete', ['id'=>$role->id]) }}"><span class="glyphicon glyphicon-remove"></span></a></td>
+                                            <td style="text-align: center; width: 10%"><a href="{{ route('administrator.roles.delete', ['id'=>$role->id]) }}"><span class="glyphicon glyphicon-remove"></span></a></td>
                                         </tr>
                                     @endforeach
                                 </tbody>
