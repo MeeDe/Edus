@@ -8,15 +8,22 @@ class DBO
 {
     public static function tables($schema = 'public')
     {
+        $blacklist = [
+            'migrations',
+            'group_roles',
+            'password_resets',
+            'roles_privileges',
+            'user_privilege',
+        ];
         $conn = getenv('DB_CONNECTION');
         $query = null;
         switch ($conn)
         {
             case 'pgsql':
-                $query = "SELECT table_name FROM information_schema.tables WHERE table_schema = '$schema';";
-                break;
+                return DB::connection($conn)->table('information_schema.tables')
+                                                ->where('table_schema', $schema)
+                                                ->whereNotIn('table_name', $blacklist)
+                                                ->get();
         }
-
-        return DB::select($query);
     }
 }

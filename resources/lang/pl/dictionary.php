@@ -3,6 +3,9 @@
 return [
     'account'   => 'Konto',
 
+    'all'       => 'Wszystko',
+    'any'       => 'Wszystko',
+
     'seo'           => 'SEO',
     'offline'       => 'Offline',
     'online'        => 'Online',
@@ -21,6 +24,9 @@ return [
 
     'ok'        => 'Ok',
     'cancel'    => 'Anuluj',
+
+    'from'      => 'Od',
+    'to'        => 'Do',
 
     'yes'       => 'Tak',
     'no'        => 'Nie',
@@ -83,6 +89,8 @@ return [
 
     'report'        => 'Raport',
     'reports'       => 'Raporty',
+
+    'action'        => 'Akcja',
 
     'registered_users'  => 'Zarejestrowani użytkownicy',
     'inactive_users'    => 'Nieaktywni użytkownicy',

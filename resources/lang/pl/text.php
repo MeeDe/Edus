@@ -98,7 +98,13 @@ return [
         ],
         'logs' => [
             'index'     => '',
-            'header'    => 'Logi',
+            'headers'    => [
+                'header'    => 'Logi',
+                'modal'     => 'Log',
+                'table'     => 'Wyniki',
+                'search_by_user'    => 'Szukaj według użytkownika',
+                'search_by_table'   => 'Szukaj według tabeli',
+            ],
         ],
         'system' => [
             'index'     => '',

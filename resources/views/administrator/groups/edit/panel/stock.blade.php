@@ -24,10 +24,10 @@
                 <label class="col-md-2 control-label">{{trans('dictionary.desc')}}</label>
 
                 <div class="col-md-10">
-                    <input type="text" class="form-control" name="desc" value="{{ $group->desc }}">
+                    <input type="text" class="form-control" name="descr" value="{{ $group->descr }}">
 
-                    @if ($errors->has('desc'))
-                        <span class="help-block"><strong>{{ $errors->first('desc') }}</strong></span>
+                    @if ($errors->has('descr'))
+                        <span class="help-block"><strong>{{ $errors->first('descr') }}</strong></span>
                     @endif
                 </div>
             </div>

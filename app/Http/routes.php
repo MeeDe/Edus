@@ -185,6 +185,14 @@ Route::group(['middleware' => 'web'], function () {
                     'as'    => 'administrator.logs.index',
                     'uses'  => 'LogsController@index',
                 ]);
+                Route::post('sbu', [
+                    'as'    => 'administrator.logs.sbu',
+                    'uses'  => 'LogsController@search_by_user',
+                ]);
+                Route::post('sbt', [
+                    'as'    => 'administrator.logs.sbt',
+                    'uses'  => 'LogsController@search_by_table',
+                ]);
             });
 
             Route::group(['prefix' => 'seo'], function() {

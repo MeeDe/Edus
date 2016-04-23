@@ -21,15 +21,4 @@ class AdministratorController extends Controller
 
         return view('administrator.index');
     }
-
-    public function test()
-    {
-        DB::connection()->enableQueryLog();
-        foreach (User::with('masks')->get() as $m)
-        {
-            dump($m->masks);
-        }
-        $queries = DB::getQueryLog();
-        dd($queries);
-    }
 }

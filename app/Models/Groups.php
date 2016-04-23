@@ -14,7 +14,7 @@ class Groups extends Model
     public $timestamps		= false;
 
     protected $fillable = [
-        'name', 'desc',
+        'name', 'descr',
     ];
 
     // Disables the log record in this model.
